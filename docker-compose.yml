@@ -1,6 +1,17 @@
 version: '3.7'
 
 services:
+
+  front:
+    image: fabianbello/meetflowfront:latest
+    container_name: meetflowfront
+    env_file: .env
+    ports:
+      - 4200:80
+    restart: always
+    networks:
+      - ms_meetflow
+      
   app:
     image: fabianbello/app_meetflow:v1
     container_name: app_meetflow
@@ -42,7 +53,7 @@ services:
     restart: always
     networks:
       - ms_meetflow
-
+      
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rmq
