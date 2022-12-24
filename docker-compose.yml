@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   front:
-    image: fabianbello/meetflowfront:v9
+    image: fabianbello/meetflowfront:v21
     container_name: meetflowfront
     env_file: .env
     ports:
@@ -13,7 +13,7 @@ services:
       - ms_meetflow
       
   app:
-    image: fabianbello/app_meetflow:v3
+    image: fabianbello/app_meetflow:v4
     container_name: app_meetflow
     env_file: .env
     ports:
@@ -25,7 +25,7 @@ services:
       - ms_meetflow
   
   microservice-projects:
-    image: fabianbello/microservice-projects:v3
+    image: fabianbello/microservice-projects:v4
     container_name: microservice-projects
     env_file: .env
     depends_on:
@@ -35,7 +35,7 @@ services:
       - ms_meetflow
 
   microservice-guests:
-    image: fabianbello/microservice-guests:v3
+    image: fabianbello/microservice-guests:v4
     container_name: microservice-guests
     env_file: .env
     depends_on:
@@ -45,8 +45,18 @@ services:
       - ms_meetflow
 
   microservice-users:
-    image: fabianbello/microservice-users:v3
+    image: fabianbello/microservice-users:v4
     container_name: microservice-users
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_meetflow
+  
+  microservice-meetings:
+    image: fabianbello/microservice-meetings:v4
+    container_name: microservice-meetings
     env_file: .env
     depends_on:
       - rabbitmq
@@ -70,7 +80,7 @@ services:
     volumes:
       - ./sql-data/db:/var/lib/mysql
     ports:
-      - 3306:3306
+      - 5000:3306
     hostname: 'hostdbusers'
     environment:
       MYSQL_DATABASE: 'dbusers'
