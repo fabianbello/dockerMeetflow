@@ -53,16 +53,6 @@ services:
     restart: always
     networks:
       - ms_meetflow
-
-  microservice-users:
-    image: fabianbello/microservice-users:v6
-    container_name: microservice-users
-    env_file: .env
-    depends_on:
-      - rabbitmq
-    restart: always
-    networks:
-      - ms_meetflow
   
   microservice-meetings:
     image: fabianbello/microservice-meetings:v6
