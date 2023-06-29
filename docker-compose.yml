@@ -13,11 +13,22 @@ services:
       - ms_meetflow
       
   app:
+    image: fabianbello/api-meetflow-m:v1
+    container_name: api-meetflow-m
+    env_file: .env
+    ports:
+      - 80:3000
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_meetflow
+  
     image: fabianbello/app_meetflow:v6
     container_name: app_meetflow
     env_file: .env
     ports:
-      - 80:3000
+      - 81:3001
     depends_on:
       - rabbitmq
     restart: always
