@@ -13,7 +13,7 @@ services:
       - ms_meetflow
       
   api-meetflow-m:
-    image: fabianbello/api-meetflow-m:v6
+    image: fabianbello/api-meetflow-m:v7
     container_name: api-meetflow-m
     env_file: .env
     ports:
