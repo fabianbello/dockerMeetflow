@@ -12,7 +12,7 @@ services:
     networks:
       - ms_meetflow
       
-  app:
+  api-meetflow-m:
     image: fabianbello/api-meetflow-m:v1
     container_name: api-meetflow-m
     env_file: .env
@@ -21,7 +21,8 @@ services:
     restart: always
     networks:
       - ms_meetflow
-  
+      
+  app:
     image: fabianbello/app_meetflow:v6
     container_name: app_meetflow
     env_file: .env
