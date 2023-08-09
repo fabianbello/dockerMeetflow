@@ -116,7 +116,7 @@ services:
       - ms_meetflow
 
   microservice-reminders:
-    image: fabianbello/microservice-reminders:v2
+    image: fabianbello/microservice-reminders:v3
     container_name: microservice-reminders
     env_file: .env
     depends_on:
