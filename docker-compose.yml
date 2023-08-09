@@ -104,10 +104,40 @@ services:
     restart: always
     networks:
       - ms_meetflow
+
+  microservice-guests:
+    image: fabianbello/microservice-guests:v11
+    container_name: microservice-guests
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_meetflow
+
+  microservice-reminders:
+    image: fabianbello/microservice-reminders:v2
+    container_name: microservice-reminders
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_meetflow
+
+  microservice-tasks:
+    image: fabianbello/microservice-tasks:v1
+    container_name: microservice-tasks
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_meetflow
   
-  microservice-meetings:
-    image: fabianbello/microservice-meetings:v10
-    container_name: microservice-meetings
+  microservice-kanban:
+    image: fabianbello/microservice-kanban:v1
+    container_name: microservice-kanban
     env_file: .env
     depends_on:
       - rabbitmq
