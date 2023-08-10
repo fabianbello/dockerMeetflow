@@ -126,7 +126,7 @@ services:
       - ms_meetflow
 
   microservice-tasks:
-    image: fabianbello/microservice-tasks:v2
+    image: fabianbello/microservice-tasks:v3
     container_name: microservice-tasks
     env_file: .env
     depends_on:
@@ -136,7 +136,7 @@ services:
       - ms_meetflow
   
   microservice-kanban:
-    image: fabianbello/microservice-kanban:v2
+    image: fabianbello/microservice-kanban:v3
     container_name: microservice-kanban
     env_file: .env
     depends_on:
