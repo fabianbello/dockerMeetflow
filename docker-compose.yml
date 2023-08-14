@@ -15,9 +15,6 @@ services:
   microservice-meetings:
     image: fabianbello/microservice-meetings:v10
     container_name: microservice-meetings
-    build:
-      context: ./microservice-meetings
-      dockerfile: Dockerfile
     env_file: .env
     depends_on:
       - rabbitmq
