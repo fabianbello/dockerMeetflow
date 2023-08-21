@@ -13,7 +13,7 @@ services:
       - ms_meetflow
       
   microservice-meetings:
-    image: fabianbello/microservice-meetings:v21
+    image: fabianbello/microservice-meetings:v10
     container_name: microservice-meetings
     env_file: .env
     depends_on:
