@@ -33,7 +33,7 @@ services:
       - ms_meetflow
       
   app:
-    image: fabianbello/app_meetflow:v31
+    image: fabianbello/app_meetflow:v32
     container_name: app_meetflow
     env_file: .env
     ports:
