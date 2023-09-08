@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   front:
-    image: fabianbello/meetflowfront:v211
+    image: fabianbello/meetflowfront:v212
     container_name: meetflowfront
     env_file: .env
     ports:
@@ -33,7 +33,7 @@ services:
       - ms_meetflow
       
   app:
-    image: fabianbello/app_meetflow:v32
+    image: fabianbello/app_meetflow:v33
     container_name: app_meetflow
     env_file: .env
     ports:
@@ -86,7 +86,7 @@ services:
       - ms_meetflow
       
   microservice-elements:
-    image: fabianbello/microservice-elements:v20
+    image: fabianbello/microservice-elements:v30
     container_name: microservice-elements
     env_file: .env
     depends_on:
