@@ -75,6 +75,16 @@ services:
     networks:
       - ms_meetflow
 
+microservice-notifications:
+    image: fabianbello/microservice-notifications:v33
+    container_name: microservice-notifications
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_meetflow
+
   microservice-inmeetings:
     image: fabianbello/microservice-inmeetings:v20
     container_name: microservice-inmeetings
