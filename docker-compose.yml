@@ -75,7 +75,7 @@ services:
     networks:
       - ms_meetflow
 
-microservice-notifications:
+  microservice-notifications:
     image: fabianbello/microservice-notifications:v33
     container_name: microservice-notifications
     env_file: .env
