@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   front:
-    image: fabianbello/meetflowfront:v409
+    image: fabianbello/meetflowfront:v411
     container_name: meetflowfront
     env_file: .env
     ports:
@@ -76,7 +76,7 @@ services:
       - ms_meetflow
 
   microservice-notifications:
-    image: fabianbello/microservice-notifications:v34
+    image: fabianbello/microservice-notifications:v33
     container_name: microservice-notifications
     env_file: .env
     depends_on:
