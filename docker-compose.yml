@@ -12,6 +12,19 @@ services:
     networks:
       - ms_meetflow
       
+  app:
+    image: fabianbello/app_meetflow:v54
+    container_name: app_meetflow
+    env_file: .env
+    ports:
+      - 80:3000
+      - 82:82
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_meetflow
+      
   microservice-meetings:
     image: fabianbello/microservice-meetings:v36
     container_name: microservice-meetings
@@ -26,19 +39,6 @@ services:
     image: fabianbello/microservice-users:v25
     container_name: microservice-users
     env_file: .env
-    depends_on:
-      - rabbitmq
-    restart: always
-    networks:
-      - ms_meetflow
-      
-  app:
-    image: fabianbello/app_meetflow:v54
-    container_name: app_meetflow
-    env_file: .env
-    ports:
-      - 80:3000
-      - 82:82
     depends_on:
       - rabbitmq
     restart: always
@@ -116,7 +116,7 @@ services:
       - ms_meetflow
 
   microservice-guests:
-    image: fabianbello/microservice-guests:v21
+    image: fabianbello/microservice-guests:v20
     container_name: microservice-guests
     env_file: .env
     depends_on:
