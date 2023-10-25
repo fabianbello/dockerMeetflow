@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   front:
-    image: fabianbello/meetflowfront:v440
+    image: fabianbello/meetflowfront:v441
     container_name: meetflowfront
     env_file: .env
     ports:
