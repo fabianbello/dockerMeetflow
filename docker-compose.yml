@@ -13,7 +13,7 @@ services:
       - ms_meetflow
       
   microservice-meetings:
-    image: fabianbello/microservice-meetings:v35
+    image: fabianbello/microservice-meetings:v36
     container_name: microservice-meetings
     env_file: .env
     depends_on:
@@ -23,7 +23,7 @@ services:
       - ms_meetflow
       
   microservice-users:
-    image: fabianbello/microservice-users:v24
+    image: fabianbello/microservice-users:v25
     container_name: microservice-users
     env_file: .env
     depends_on:
@@ -33,7 +33,7 @@ services:
       - ms_meetflow
       
   app:
-    image: fabianbello/app_meetflow:v53
+    image: fabianbello/app_meetflow:v54
     container_name: app_meetflow
     env_file: .env
     ports:
@@ -46,7 +46,7 @@ services:
       - ms_meetflow
 
   microservice-premeetings:
-    image: fabianbello/microservice-premeetings:v20
+    image: fabianbello/microservice-premeetings:v21
     container_name: microservice-premeetings
     env_file: .env
     depends_on:
@@ -56,7 +56,7 @@ services:
       - ms_meetflow
 
   microservice-postmeetings:
-    image: fabianbello/microservice-postmeetings:v20
+    image: fabianbello/microservice-postmeetings:v21
     container_name: microservice-postmeetings
     env_file: .env
     depends_on:
@@ -66,7 +66,7 @@ services:
       - ms_meetflow
 
   microservice-meetingminutes:
-    image: fabianbello/microservice-meetingminutes:v24
+    image: fabianbello/microservice-meetingminutes:v25
     container_name: microservice-meetingminutes
     env_file: .env
     depends_on:
@@ -76,7 +76,7 @@ services:
       - ms_meetflow
 
   microservice-notifications:
-    image: fabianbello/microservice-notifications:v35
+    image: fabianbello/microservice-notifications:v36
     container_name: microservice-notifications
     env_file: .env
     depends_on:
@@ -86,7 +86,7 @@ services:
       - ms_meetflow
 
   microservice-inmeetings:
-    image: fabianbello/microservice-inmeetings:v20
+    image: fabianbello/microservice-inmeetings:v21
     container_name: microservice-inmeetings
     env_file: .env
     depends_on:
@@ -96,7 +96,7 @@ services:
       - ms_meetflow
       
   microservice-elements:
-    image: fabianbello/microservice-elements:v31
+    image: fabianbello/microservice-elements:v32
     container_name: microservice-elements
     env_file: .env
     depends_on:
@@ -106,7 +106,7 @@ services:
       - ms_meetflow
   
   microservice-projects:
-    image: fabianbello/microservice-projects:v20
+    image: fabianbello/microservice-projects:v21
     container_name: microservice-projects
     env_file: .env
     depends_on:
@@ -116,7 +116,7 @@ services:
       - ms_meetflow
 
   microservice-guests:
-    image: fabianbello/microservice-guests:v20
+    image: fabianbello/microservice-guests:v21
     container_name: microservice-guests
     env_file: .env
     depends_on:
@@ -126,7 +126,7 @@ services:
       - ms_meetflow
 
   microservice-reminders:
-    image: fabianbello/microservice-reminders:v21
+    image: fabianbello/microservice-reminders:v22
     container_name: microservice-reminders
     env_file: .env
     depends_on:
@@ -136,7 +136,7 @@ services:
       - ms_meetflow
 
   microservice-tasks:
-    image: fabianbello/microservice-tasks:v20
+    image: fabianbello/microservice-tasks:v21
     container_name: microservice-tasks
     env_file: .env
     depends_on:
@@ -146,7 +146,7 @@ services:
       - ms_meetflow
   
   microservice-kanban:
-    image: fabianbello/microservice-kanban:v20
+    image: fabianbello/microservice-kanban:v21
     container_name: microservice-kanban
     env_file: .env
     depends_on:
