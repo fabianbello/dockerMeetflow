@@ -169,7 +169,7 @@ services:
     image: mysql:latest
     container_name: mysql-microservice-users
     volumes:
-      - ./sql-data/db:/var/lib/mysql22
+      - ./sql-data/db:/var/lib/mysql3
     ports:
       - 5000:3306
     hostname: 'hostdbusers'
