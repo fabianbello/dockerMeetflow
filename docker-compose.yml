@@ -13,7 +13,7 @@ services:
       - ms_meetflow
 
   app:
-    image: fabianbello/app_meetflow:v64
+    image: fabianbello/app_meetflow:v65
     container_name: app_meetflow
     env_file: .env
     ports:
@@ -76,7 +76,7 @@ services:
       - ms_meetflow
 
   microservice-notifications:
-    image: fabianbello/microservice-notifications:v42
+    image: fabianbello/microservice-notifications:v43
     container_name: microservice-notifications
     env_file: .env
     depends_on:
