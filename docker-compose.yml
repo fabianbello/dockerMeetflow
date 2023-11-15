@@ -115,16 +115,6 @@ services:
     networks:
       - ms_dmeetflow
 
-  dmeetflow_microservice-guests:
-    image: fabianbello/dmeetflow_microservice-guests:v1.0.0
-    container_name: dmeetflow_microservice-guests
-    env_file: .env
-    depends_on:
-      - rabbitmq
-    restart: always
-    networks:
-      - ms_dmeetflow
-
   dmeetflow_microservice-reminders:
     image: fabianbello/dmeetflow_microservice-reminders:v1.0.0
     container_name: dmeetflow_microservice-reminders
