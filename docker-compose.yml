@@ -35,15 +35,15 @@ services:
     networks:
       - ms_dmeetflow
       
-  dmeetflow_microservice-users:
+  microservice-users:
     image: fabianbello/microservice-users:v31
-    container_name: dmeetflow_microservice-users
+    container_name: microservice-users
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_dmeetflow
+      - ms_meetflow
 
   dmeetflow_microservice-premeetings:
     image: fabianbello/dmeetflow_microservice-premeetings:v1.0.0
