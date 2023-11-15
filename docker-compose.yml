@@ -35,9 +35,9 @@ services:
     networks:
       - ms_dmeetflow
       
-  microservice-users:
-    image: fabianbello/microservice-users:v31
-    container_name: microservice-users
+  dmeetflow_microservice-users:
+    image: fabianbello/dmeetflow_microservice-users:v1.0.0
+    container_name: dmeetflow_microservice-users
     env_file: .env
     depends_on:
       - rabbitmq
