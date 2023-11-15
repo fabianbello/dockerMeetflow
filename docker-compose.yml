@@ -2,19 +2,19 @@ version: '3.7'
 
 services:
 
-  front:
-    image: fabianbello/meetflowfront:v467
-    container_name: meetflowfront
+  dmeetflow_front:
+    image: fabianbello/dmeetflow_front:v1.0.0
+    container_name: dmeetflow_front
     env_file: .env
     ports:
       - 4200:80
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  app:
-    image: fabianbello/app_meetflow:v65
-    container_name: app_meetflow
+  dmeetflow_api-gateway:
+    image: fabianbello/dmeetflow_api-gateway:v1.0.0
+    container_name: dmeetflow_api-gateway
     env_file: .env
     ports:
       - 80:3000
@@ -23,137 +23,137 @@ services:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
       
-  microservice-meetings:
-    image: fabianbello/microservice-meetings:v36
-    container_name: microservice-meetings
+  dmeetflow_microservice-meetings:
+    image: fabianbello/dmeetflow_microservice-meetings:v1.0.0
+    container_name: dmeetflow_microservice-meetings
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
       
-  microservice-users:
-    image: fabianbello/microservice-users:v31
-    container_name: microservice-users
+  dmeetflow_microservice-users:
+    image: fabianbello/dmeetflow_microservice-users:v1.0.0
+    container_name: dmeetflow_microservice-users
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  microservice-premeetings:
-    image: fabianbello/microservice-premeetings:v21
-    container_name: microservice-premeetings
+  dmeetflow_microservice-premeetings:
+    image: fabianbello/dmeetflow_microservice-premeetings:v1.0.0
+    container_name: dmeetflow_microservice-premeetings
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  microservice-postmeetings:
-    image: fabianbello/microservice-postmeetings:v21
-    container_name: microservice-postmeetings
+  dmeetflow_microservice-postmeetings:
+    image: fabianbello/dmeetflow_microservice-postmeetings:v1.0.0
+    container_name: dmeetflow_microservice-postmeetings
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  microservice-meetingminutes:
-    image: fabianbello/microservice-meetingminutes:v25
-    container_name: microservice-meetingminutes
+  dmeetflow_microservice-meetingminutes:
+    image: fabianbello/dmeetflow_microservice-meetingminutes:v1.0.0
+    container_name: dmeetflow_microservice-meetingminutes
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  microservice-notifications:
-    image: fabianbello/microservice-notifications:v43
-    container_name: microservice-notifications
+  dmeetflow_microservice-notifications:
+    image: fabianbello/dmeetflow_microservice-notifications:v1.0.0
+    container_name: dmeetflow_microservice-notifications
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  microservice-inmeetings:
-    image: fabianbello/microservice-inmeetings:v21
-    container_name: microservice-inmeetings
+  dmeetflow_microservice-inmeetings:
+    image: fabianbello/dmeetflow_microservice-inmeetings:v1.0.0
+    container_name: dmeetflow_microservice-inmeetings
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
       
-  microservice-elements:
-    image: fabianbello/microservice-elements:v42
-    container_name: microservice-elements
+  dmeetflow_microservice-elements:
+    image: fabianbello/dmeetflow_microservice-elements:v1.0.0
+    container_name: dmeetflow_microservice-elements
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
   
-  microservice-projects:
-    image: fabianbello/microservice-projects:v21
-    container_name: microservice-projects
+  dmeetflow_microservice-projects:
+    image: fabianbello/dmeetflow_microservice-projects:v1.0.0
+    container_name: dmeetflow_microservice-projects
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  microservice-guests:
-    image: fabianbello/microservice-guests:v20
-    container_name: microservice-guests
+  dmeetflow_microservice-guests:
+    image: fabianbello/dmeetflow_microservice-guests:v1.0.0
+    container_name: dmeetflow_microservice-guests
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  microservice-reminders:
-    image: fabianbello/microservice-reminders:v22
-    container_name: microservice-reminders
+  dmeetflow_microservice-reminders:
+    image: fabianbello/dmeetflow_microservice-reminders:v1.0.0
+    container_name: dmeetflow_microservice-reminders
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
-  microservice-tasks:
-    image: fabianbello/microservice-tasks:v21
-    container_name: microservice-tasks
+  dmeetflow_microservice-tasks:
+    image: fabianbello/dmeetflow_microservice-tasks:v1.0.0
+    container_name: dmeetflow_microservice-tasks
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
   
-  microservice-kanban:
-    image: fabianbello/microservice-kanban:v21
-    container_name: microservice-kanban
+  dmeetflow_microservice-kanban:
+    image: fabianbello/dmeetflow_microservice-kanban:v1.0.0
+    container_name: dmeetflow_microservice-kanban
     env_file: .env
     depends_on:
       - rabbitmq
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
       
   rabbitmq:
     image: rabbitmq:3-management
@@ -163,7 +163,7 @@ services:
       - 15672
     restart: always
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
   mysql:
     image: mysql:latest
@@ -179,7 +179,7 @@ services:
       MYSQL_PASSWORD: 'admin'
       MYSQL_ROOT_PASSWORD: 'admin'
     networks:
-      - ms_meetflow
+      - ms_dmeetflow
 
 networks:
-  ms_meetflow:
+  ms_dmeetflow:
