@@ -22,6 +22,10 @@ URI_MONGODB_MEETINGS=mongodb+srv://Fabian:vcRUv4QUl65BLHji@cluster0.bnufw.mongod
 URI_MONGODB_MEETINGMINUTES=mongodb+srv://Fabian:vcRUv4QUl65BLHji@cluster0.bnufw.mongodb.net/d-meetflow_test_meetingminutes
 URI_MONGODB_ELEMENTS=mongodb+srv://Fabian:vcRUv4QUl65BLHji@cluster0.bnufw.mongodb.net/d-meetflow_test_elements
 URI_MONGODB_REMINDERS=mongodb+srv://Fabian:vcRUv4QUl65BLHji@cluster0.bnufw.mongodb.net/d-meetflow_test_reminders
+URI_MONGODB_COLLABORATIVE_CHAT=mongodb+srv://Fabian:vcRUv4QUl65BLHji@cluster0.bnufw.mongodb.net/d-meetflow_dev_collaborative_chat
+URI_MONGODB_DOODLE=mongodb+srv://Fabian:vcRUv4QUl65BLHji@cluster0.bnufw.mongodb.net/d-meetflow_dev_doodle
+URI_MONGODB_TEXT_EDIT=mongodb+srv://Fabian:vcRUv4QUl65BLHji@cluster0.bnufw.mongodb.net/d-meetflow_dev_text_edit
+URI_MONGODB_KANBAN_PLUS=mongodb+srv://Fabian:vcRUv4QUl65BLHji@cluster0.bnufw.mongodb.net/d-meetflow_dev_kanban_plus
 
 # BASE DE DATOS MYSQL USUARIOS LOCAL
 # HOST_DB_USER=localhost
