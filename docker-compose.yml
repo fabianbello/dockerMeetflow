@@ -13,7 +13,7 @@ services:
       - ms_dmeetflow
 
   dmeetflow_api-gateway:
-    image: fabianbello/dmeetflow_api-gateway:v1.0.0
+    image: fabianbello/dmeetflow_api-gateway:v2.0.0
     container_name: dmeetflow_api-gateway
     env_file: .env
     ports:
@@ -144,7 +144,47 @@ services:
     restart: always
     networks:
       - ms_dmeetflow
-      
+
+  dmeetflow_microservice-kanban-plus:
+    image: fabianbello/dmeetflow_microservice-kanban-plus:v1.0.0
+    container_name: dmeetflow_microservice-kanban-plus
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_dmeetflow
+
+  dmeetflow_microservice-doodle:
+    image: fabianbello/dmeetflow_microservice-doodle:v1.0.0
+    container_name: dmeetflow_microservice-doodle
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_dmeetflow
+
+  dmeetflow_microservice-collaborative-chat:
+    image:  fabianbello/dmeetflow_microservice-collaborative-chat:v1.0.0
+    container_name: dmeetflow_microservice-collaborative-chat
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_dmeetflow
+
+  dmeetflow_microservice-text-editor:
+    image: fabianbello/dmeetflow_microservice-text-editor:v1.0.0
+    container_name: dmeetflow_microservice-text-editor
+    env_file: .env
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_dmeetflow
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rmq
