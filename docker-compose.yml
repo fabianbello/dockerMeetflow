@@ -176,7 +176,7 @@ services:
       - ms_dmeetflow
 
   dmeetflow_microservice-text-editor:
-    image: fabianbello/dmeetflow_microservice-text-editor:v1.0.0
+    image: fabianbello/dmeetflow_microservice-text-editor:v1.0.1
     container_name: dmeetflow_microservice-text-editor
     env_file: .env
     depends_on:
