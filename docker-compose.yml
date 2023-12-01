@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   dmeetflow_front:
-    image: fabianbello/dmeetflow_front:v1.1.0
+    image: fabianbello/dmeetflow_front:v1.3.0
     container_name: dmeetflow_front
     env_file: .env
     ports:
