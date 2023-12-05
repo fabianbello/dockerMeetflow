@@ -26,7 +26,7 @@ services:
       - ms_dmeetflow
 
   dmeetflow_ms-editor-texto:
-    image: fabianbello/dmeetflow_ms-editor-texto:v1.0.0
+    image: fabianbello/dmeetflow_ms-editor-texto:v1.0.1
     container_name: dmeetflow_ms-editor-texto
     env_file: .env
     ports:
@@ -188,7 +188,7 @@ services:
       - ms_dmeetflow
 
   dmeetflow_microservice-text-editor:
-    image: fabianbello/dmeetflow_microservice-text-editor:v1.0.2
+    image: fabianbello/dmeetflow_microservice-text-editor:v1.0.3
     container_name: dmeetflow_microservice-text-editor
     env_file: .env
     depends_on:
