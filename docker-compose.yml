@@ -24,6 +24,18 @@ services:
     restart: always
     networks:
       - ms_dmeetflow
+
+  dmeetflow_ms-editor-texto:
+    image: fabianbello/dmeetflow_ms-editor-texto:v1.0.0
+    container_name: dmeetflow_ms-editor-texto
+    env_file: .env
+    ports:
+      - 8000:8000
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_dmeetflow
       
   dmeetflow_microservice-meetings:
     image: fabianbello/dmeetflow_microservice-meetings:v1.0.0
