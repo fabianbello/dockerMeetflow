@@ -88,7 +88,7 @@ services:
       - ms_dmeetflow
 
   dmeetflow_microservice-notifications:
-    image: fabianbello/dmeetflow_microservice-notifications:v1.0.1
+    image: fabianbello/dmeetflow_microservice-notifications:v1.0.2
     container_name: dmeetflow_microservice-notifications
     env_file: .env
     depends_on:
