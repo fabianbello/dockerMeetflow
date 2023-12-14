@@ -13,7 +13,7 @@ services:
       - ms_dmeetflow
 
   dmeetflow_api-gateway:
-    image: fabianbello/dmeetflow_api-gateway:v2.0.3
+    image: fabianbello/dmeetflow_api-gateway:v2.0.4
     container_name: dmeetflow_api-gateway
     env_file: .env
     ports:
