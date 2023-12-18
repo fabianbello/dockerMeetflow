@@ -48,7 +48,7 @@ services:
       - ms_dmeetflow
       
   dmeetflow_ms-users-mongodb:
-    image: fabianbello/dmeetflow_ms-users-mongodb:v1.0.0
+    image: fabianbello/dmeetflow_ms-users-mongodb:v1.0.1
     container_name: dmeetflow_ms-users-mongodb
     env_file: .env
     depends_on:
